@@ -1,8 +1,36 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.css';
+// import Link from 'next/link';
+// import Counter from '../components/Counter';
+import Post from './blog/post';
+import { Grid, Card, Text } from "@nextui-org/react";
+import { useMediaQuery } from './useMediaQuery.js';
+import Example from './Example';
+// import { Add, Sub, Mul, Div } from '../components/Calculator';
+
+// const data = {
+//   'a' : 10,
+//   'b' : 20
+// }
+
+// const data = [15, 25];
 
 export default function Home() {
+  const isMd = useMediaQuery(960);
+
+  const MockItem = ({ text }) => {
+    return (
+      <Card css={{ h: "$20", $$cardColor: '$colors$primary' }}>
+        <Card.Body>
+          <Text h6 size={15} color="white" css={{ m: 0 }}>
+            {text}
+          </Text>
+        </Card.Body>
+      </Card>
+    );
+  };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -12,58 +40,40 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+        <Grid.Container gap={2} justify="center">
+          <Grid xs={6} sm={0}>
+            <MockItem text={isMd ? "1 of 2" : "1 of 1"} />
+          </Grid>
+          <Grid xs={6} sm={0}>
+            <MockItem text={isMd ? "2 of 2" : "1 of 1"} />
+          </Grid>
+          <Grid xs={12}>
+            {/* <MockItem text="1 of 1" /> */}
+            <Example />
+          </Grid>
+          <Grid xs>
+            <MockItem text="1 of 3" />
+          </Grid>
+          <Grid xs={6}>
+            <Post />
+          </Grid>
+          <Grid xs>
+            <MockItem text="3 of 3" />
+          </Grid>
+        </Grid.Container>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+        {/* <button style={{ color: 'red' }}>
+          <Link href='/blog'>
+            <a>Blog</a>
+          </Link>
+        </button>
+        <Counter /> */}
+        {/* <Add data={data} />
+        <Sub data={data} />
+        <Mul data={data} />
+        <Div data={data} /> */}
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
   )
 }
