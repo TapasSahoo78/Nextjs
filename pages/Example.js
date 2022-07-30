@@ -1,29 +1,30 @@
-import Link from "next/link"
+import Link from "next/link";
+import Auth from "./auth/register";
 
 function Example() {
   return (
-    <div className="m-auto">
+    <div className="m-auto mynav">
       <nav className="navbar navbar-expand-sm bg-light navbar-light">
-        <div className="container-fluid">
-          <ul className="navbar-nav bg-danger">
+        <div className="mymain">
+          <ul className="navbar-nav bg-secondary navbody">
             <li className="nav-item">
               <Link href="/">
-                <a className="nav-link fw-bold active">Home</a>
+                <a className="nav-link fw-bold headlink active">Home</a>
               </Link>
             </li>
             <li className="nav-item">
               <Link href="/about">
-                <a className="nav-link fw-bold">About</a>
+                <a className="nav-link fw-bold headlink ">About</a>
               </Link>
             </li>
             <li className="nav-item">
               <Link href="/contact">
-                <a className="nav-link fw-bold">Contact</a>
+                <a className="nav-link fw-bold headlink ">Contact</a>
               </Link>
             </li>
             <li className="nav-item">
-              <Link href="/signup">
-                <a className="nav-link fw-bold">Signup</a>
+              <Link href="./auth/register">
+                <a className="nav-link fw-bold headlink ">Signup</a>
               </Link>
             </li>
           </ul>

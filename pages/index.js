@@ -40,27 +40,23 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-
         <Grid.Container gap={2} justify="center">
-          <Grid xs={6} sm={0}>
-            <MockItem text={isMd ? "1 of 2" : "1 of 1"} />
-          </Grid>
-          <Grid xs={6} sm={0}>
-            <MockItem text={isMd ? "2 of 2" : "1 of 1"} />
-          </Grid>
           <Grid xs={12}>
-            {/* <MockItem text="1 of 1" /> */}
             <Example />
           </Grid>
-          <Grid xs>
-            <MockItem text="1 of 3" />
-          </Grid>
-          <Grid xs={6}>
-            <Post />
-          </Grid>
-          <Grid xs>
-            <MockItem text="3 of 3" />
-          </Grid>
+
+          <Grid xs={12}>
+            <Grid xs={3}>
+              <MockItem text="1 of 3" />
+            </Grid>
+            <Grid xs={6}>
+              <Post />
+            </Grid>
+            <Grid xs={3}>
+              <MockItem text="3 of 3" />
+            </Grid>
+            </Grid>
+
         </Grid.Container>
 
         {/* <button style={{ color: 'red' }}>
