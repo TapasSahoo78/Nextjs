@@ -6,8 +6,8 @@ const nextConfig = {
 
 module.exports = nextConfig
 
-module.exports={
-  images :{
-    domain:["https://cdn.pixabay.com/"],
+module.exports = {
+  images: {
+    domain: ["https://cdn.pixabay.com/"],
   }
 }
