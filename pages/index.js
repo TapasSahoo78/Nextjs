@@ -7,6 +7,7 @@ import Post from './blog/post';
 import { Grid, Card, Text } from "@nextui-org/react";
 import { useMediaQuery } from './useMediaQuery.js';
 import Example from './Example';
+import { env } from '../next.config';
 // import { Add, Sub, Mul, Div } from '../components/Calculator';
 
 // const data = {
@@ -17,6 +18,8 @@ import Example from './Example';
 // const data = [15, 25];
 
 export default function Home() {
+  // const user = process.env.DB_USER;
+  // console.log(user);
   const isMd = useMediaQuery(960);
 
   const MockItem = ({ text }) => {
@@ -55,7 +58,7 @@ export default function Home() {
             <Grid xs={3}>
               <MockItem text="3 of 3" />
             </Grid>
-            </Grid>
+          </Grid>
 
         </Grid.Container>
 

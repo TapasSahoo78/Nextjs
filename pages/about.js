@@ -3,6 +3,7 @@ import styles from '../styles/Home.module.css';
 import { Grid } from "@nextui-org/react";
 import Example from './Example';
 import Image from 'next/image';
+import Footer from '../components/Footer';
 
 const about = () => {
     return (
@@ -18,11 +19,11 @@ const about = () => {
                             <p>Some text about who we are and what we do.</p>
                             <p>Resize the browser window to see that this page is responsive by the way.</p>
                         </div>
-                        <h2 style={{ "-webkit-text-align": "center", "text-align": "center" }}>Our Team</h2>
+                        <h2 style={{ "WebkitTextAlign": "center", "textAlign": "center" }}>Our Team</h2>
                         <div className="row">
                             <div className="column">
                                 <div className="card">
-                                    <Image src="/img.jpeg" className='imgst' alt="Jane" width={200} height={200}/>
+                                    <Image src="/img.jpeg" className='imgst' alt="Jane" width={200} height={200} />
                                     <div className="container">
                                         <h2>Tapas Sahoo</h2>
                                         <p className="title">CEO &amp; Founder</p>
@@ -34,7 +35,7 @@ const about = () => {
                             </div>
                             <div className="column">
                                 <div className="card">
-                                    <Image src="/img.jpeg" className='imgst' alt="Mike" width={200} height={200}/>
+                                    <Image src="/img.jpeg" className='imgst' alt="Mike" width={200} height={200} />
                                     <div className="container">
                                         <h2>Tapas Sahoo</h2>
                                         <p className="title">Director</p>
@@ -46,7 +47,7 @@ const about = () => {
                             </div>
                             <div className="column">
                                 <div className="card">
-                                    <Image src="/img.jpeg" className='imgst' alt="John" width={200} height={200}/>
+                                    <Image src="/img.jpeg" className='imgst' alt="John" width={200} height={200} />
                                     <div className="container">
                                         <h2>Tapas Sahoo</h2>
                                         <p className="title">Developer</p>
@@ -65,3 +66,13 @@ const about = () => {
 }
 
 export default about;
+
+/***** If ABOUT Page not require Header Section *****/
+// about.getLayout = function pageLayout(page) {
+//     return (
+//         <>
+//             {page}
+//             <Footer />
+//         </>
+//     )
+// }

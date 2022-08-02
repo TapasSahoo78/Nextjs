@@ -2,12 +2,19 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-}
-
-module.exports = nextConfig
-
-module.exports = {
-  images: {
-    domain: ["https://cdn.pixabay.com/"],
+  // env: {
+  //   DB_HOST: process.env.DB_HOST,
+  // },
+  redirects: async () => {
+    return [
+      {
+        source: '/about',
+        destination: '/',
+        permanent: true
+      },
+    ]
   }
 }
+
+
+module.exports = nextConfig;

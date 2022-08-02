@@ -7,6 +7,8 @@ import { DeleteIcon } from "./test/DeleteIcon";
 
 
 export const getStaticProps = async () => {
+    // const user = process.env.DB_USER;
+    // console.log(user);
     const res = await fetch('https://jsonplaceholder.typicode.com/posts');
     const myresult = await res.json();
     return {
