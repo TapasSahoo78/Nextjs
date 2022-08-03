@@ -44,9 +44,9 @@ export default function Home() {
 
       <main className={styles.main}>
         <Grid.Container gap={2} justify="center">
-          <Grid xs={12}>
+          {/* <Grid xs={12}>
             <Example />
-          </Grid>
+          </Grid> */}
 
           <Grid xs={12}>
             <Grid xs={3}>

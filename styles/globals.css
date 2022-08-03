@@ -11,6 +11,14 @@ a {
   text-decoration: none;
 }
 
+.mynavtext {
+  font-size: 20px !important;
+}
+
+.mynavtext1 {
+  font-size: 15px !important;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -19,6 +27,7 @@ a {
   html {
     color-scheme: dark;
   }
+
   body {
     color: white;
     background: black;

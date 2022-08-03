@@ -1,23 +1,89 @@
-import React from 'react'
+import { Image } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import Link from 'next/link';
 
 function Header() {
     return (
-        <div className="row grow">
-            <div className="col-12 bg-primary py-3">
-                Header
-            </div>
-            {/* <div className="col-4 bg-info py-3">
-                Menu
-            </div>
-            <div className="main col-8 bg-warning h-100 py-3">
-                <h4>Main</h4>
-                <p className="mb-5">Sriracha biodiesel taxidermy organic post-ironic, Intelligentsia salvia mustache 90's code editing brunch. Butcher polaroid VHS art party, hashtag Brooklyn deep v PBR narwhal sustainable mixtape
-                    swag wolf squid tote bag. Tote bag cronut semiotics, raw denim deep v taxidermy messenger bag. Tofu YOLO Etsy, direct trade
-                    ethical Odd Future jean shorts paleo. Forage Shoreditch tousled aesthetic irony, street art organic Bushwick artisan cliche semiotics ugh
-                    synth chillwave meditation. Shabby chic lomo plaid vinyl chambray Vice. Vice sustainable cardigan, Williamsburg master cleanse hella DIY 90's blog.</p>
-            </div> */}
-        </div>
+        <Navbar bg="success" expand="lg">
+            <Container fluid>
+                <Link href="/">
+                    <Navbar.Brand >
+                        <Image src='svg-2.svg' alt='no img' height={50} width={45} />
+                    </Navbar.Brand>
+                </Link>
+                <Navbar.Toggle aria-controls="navbarScroll" />
+                <Navbar.Collapse id="navbarScroll">
+                    <Nav
+                        className="me-auto my-2 my-lg-0"
+                        style={{ maxHeight: '100px' }}
+                        navbarScroll
+                    >
+                        <Link href="/" passHref>
+                            <Nav.Link className='mynavtext'><strong>Home</strong></Nav.Link>
+                        </Link>
+
+
+                        {/* <Link href="/contact">
+                            <Nav.Link as="a" href="/contact">
+                                Contact
+                            </Nav.Link>
+                        </Link>
+
+                        <Link href="/about">
+                            <Nav.Link as="a" href="/about">
+                               About
+                            </Nav.Link>
+                        </Link> */}
+
+                        <NavDropdown title="Blog" id="navbarScrollingDropdown" className="fw-bold mynavtext">
+                            <Link href="/post" passHref>
+                                <NavDropdown.Item className='mynavtext1'><strong>Blog1</strong></NavDropdown.Item>
+                            </Link>
+                            <Link href="/post" passHref>
+                                <NavDropdown.Item className='mynavtext1'>
+                                    <strong> Blog2 </strong>
+                                </NavDropdown.Item>
+                            </Link>
+
+                            <NavDropdown.Divider />
+                            <Link href="/post" passHref>
+                                <NavDropdown.Item className='mynavtext1'>
+                                    <strong> Blog3 </strong>
+                                </NavDropdown.Item>
+                            </Link>
+                        </NavDropdown>
+
+                        <Link href="/post" passHref>
+                            <Nav.Link className='mynavtext'>
+                                <strong>Link</strong>
+                            </Nav.Link>
+                        </Link>
+                        <Link href="/about" passHref>
+                            <Nav.Link className='mynavtext'><strong>About</strong></Nav.Link>
+                        </Link>
+
+                        <Link href="/contact" passHref>
+                            <Nav.Link className='mynavtext'><strong>Contact</strong></Nav.Link>
+                        </Link>
+                    </Nav>
+                    <Form className="d-flex">
+                        <Form.Control
+                            type="search"
+                            placeholder="Search"
+                            className="me-2"
+                            aria-label="Search"
+                        />
+                        <Button variant="primary w-25">Search</Button>
+                    </Form>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar >
     )
 }
 
-export default Header
+export default Header;
