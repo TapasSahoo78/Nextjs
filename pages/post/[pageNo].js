@@ -34,7 +34,7 @@ export const getStaticProps = async (context) => {
 
 function mydata({ mdata }) {
     const { id, title, body } = mdata;
-    return (<div style={{ minHeight: "calc(100vh - 250px)" }}>
+    return (<div style={{ ight: "calc(100vh - 250px)" }}>
         <div>{mdata.id}</div>
         <div>{mdata.title}</div>
         <div>{mdata.body}</div>
